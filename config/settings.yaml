@@ -1,0 +1,90 @@
+# AWS Configuration
+aws:
+  region: us-east-1
+  account_id: "123456789012"  # Replace with your AWS account ID
+  
+# S3 Configuration
+s3:
+  data_lake_bucket: "ed-tech-data-lake-{account_id}"
+  raw_data_prefix: "raw/"
+  processed_data_prefix: "processed/"
+  search_index_prefix: "search-index/"
+
+# Data Sources Configuration
+data_sources:
+  oracle:
+    host: "oracle-db.example.com"
+    port: 1521
+    service_name: "EDTECH"
+    username: "${ORACLE_USERNAME}"
+    password: "${ORACLE_PASSWORD}"
+    tables:
+      - "students"
+      - "courses"
+      - "enrollments"
+      - "academic_records"
+  
+  workday:
+    base_url: "https://wd5-impl-services1.workday.com"
+    tenant: "your-tenant"
+    username: "${WORKDAY_USERNAME}"
+    password: "${WORKDAY_PASSWORD}"
+    endpoints:
+      - "students"
+      - "academic_programs"
+      - "job_postings"
+  
+  tableau:
+    server_url: "https://your-tableau-server.com"
+    site_id: "your-site-id"
+    username: "${TABLEAU_USERNAME}"
+    password: "${TABLEAU_PASSWORD}"
+    workbooks:
+      - "student_analytics"
+      - "job_market_trends"
+
+# ETL Configuration
+etl:
+  glue_job_name: "ed-tech-etl-job"
+  glue_role: "EdTechGlueRole"
+  max_capacity: 2
+  timeout: 60  # minutes
+  retry_attempts: 3
+  
+# Lambda Configuration
+lambda:
+  search_function_name: "ed-tech-search"
+  memory_size: 512
+  timeout: 30
+  environment_variables:
+    S3_BUCKET: "${S3_BUCKET}"
+    SEARCH_INDEX_KEY: "search-index/student-resources.json"
+
+# Monitoring Configuration
+monitoring:
+  cloudwatch:
+    log_group: "/aws/ed-tech/etl"
+    log_retention_days: 30
+    metrics_namespace: "EdTech/ETL"
+  
+  alarms:
+    - name: "ETLJobFailure"
+      metric: "GlueJobRunStatus"
+      threshold: 1
+      comparison: "GreaterThanThreshold"
+    
+    - name: "LambdaErrorRate"
+      metric: "Errors"
+      threshold: 5
+      comparison: "GreaterThanThreshold"
+
+# Search Configuration
+search:
+  max_results: 100
+  similarity_threshold: 0.7
+  fields_to_search:
+    - "title"
+    - "description"
+    - "skills"
+    - "location"
+    - "company"
