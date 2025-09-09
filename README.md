@@ -2,7 +2,7 @@
 
 ## 🎯 Project Overview
 
-This is a comprehensive prototype of an Ed-Tech ETL Pipeline that replicates the production system described in your bullet points. The project demonstrates how to build a scalable data processing pipeline using AWS services to extract, transform, and load data from multiple sources (Oracle, Workday, Tableau) and provide intelligent search capabilities.
+This is a comprehensive prototype of an Ed-Tech ETL Pipeline that demonstrates my experience with building scalable data processing systems. The project showcases my ability to design and deploy distributed ETL pipelines using AWS services to extract, transform, and load data from multiple sources (Oracle, Workday, Tableau) and deliver intelligent search capabilities with significant performance improvements.
 
 ## 🏗️ What We Built
 
@@ -358,6 +358,6 @@ Comprehensive test suite covering:
 
 ## 🎉 Conclusion
 
-This Ed-Tech ETL Pipeline prototype successfully demonstrates the technical skills and architectural patterns needed to build production-scale data processing systems. It showcases expertise in AWS services, ETL pipeline design, data source integration, and scalable system architecture - exactly matching the requirements from your original bullet points.
+This Ed-Tech ETL Pipeline prototype successfully demonstrates my technical skills and architectural patterns needed to build production-scale data processing systems. It showcases my expertise in AWS services, ETL pipeline design, data source integration, and scalable system architecture - directly reflecting my professional experience in data engineering and cloud technologies.
 
-The project is ready for deployment, testing, and further development, providing a solid foundation for learning and experimentation with modern data engineering technologies.
+The project is ready for deployment, testing, and further development, providing a comprehensive demonstration of my capabilities in modern data engineering technologies.
